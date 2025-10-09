@@ -1,15 +1,24 @@
 import java.io.*;
 import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
 
 public class Solution {
 
     public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
         Scanner sc=new Scanner(System.in);
-        double a=sc.nextDouble();
-        double b=2.05 * a;
-        System.out.printf("%.2f\n",b);
+        int basic_salary=sc.nextInt();
+        double hra, da,gross_salary;
+        if(basic_salary < 15000){
+            hra = 0.15 * basic_salary;
+            da = 0.90 * basic_salary;
+            gross_salary = basic_salary + hra + da;
+            System.out.printf("%.2f",gross_salary);
+        }
+        else if(basic_salary >= 15000){
+            hra = 5000;
+            da = 0.98 * basic_salary;
+            gross_salary = basic_salary + hra + da;
+            System.out.printf("%.2f",gross_salary);
+        }
     }
 }
